@@ -6,13 +6,15 @@ class School
   List<Student> students;
   static double totalMoneyEarned;
   static double totalMoneySpent;
+  static double totalMoneyLeft;
 
-  public School(List<Teacher> teachers, List<Student> students, double totalMoneyEarned, double totalMoneySpent)
+  public School(List<Teacher> teachers, List<Student> students)
   {
     this.teachers = teachers; 
     this.students = students; 
     School.totalMoneyEarned = 0;
     School.totalMoneySpent = 0;
+    School.totalMoneyLeft = 0;
   }
 
   /**
@@ -69,6 +71,11 @@ class School
     return totalMoneySpent;
   }
 
+  public double getTotalMoneyLeft()
+  {
+    return totalMoneyLeft;
+  }
+
   /**
    * total money that the school earned
    * @param moneyEarned - to be added to totalMoneyEarned
@@ -80,10 +87,20 @@ class School
 
   /**
    * total money that the school spent
-   * @param moneySpent - to be subtracted from totalMoneyEarned
+   * @param moneySpent - to be added t0 totalMoneySpent
    */
   public static void totalMoneySpent(double moneySpent)
   {
-    totalMoneyEarned -= moneySpent;
+    totalMoneySpent += moneySpent;
   }
-}
+
+  /**
+   * total money that the school has left
+   */
+  public static void totalMoneyLeft(double earned, double fees)
+  {
+    totalMoneyLeft += earned;
+    totalMoneyLeft -= fees;
+  }
+
+} 

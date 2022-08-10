@@ -60,13 +60,14 @@ public class Teacher
   }
 
   /**
-   * teacher receives salary, updates student's funds
+   * teacher receives salary, updates school's funds
    * @param salary - teacher's salary
    */
-  public void receiveSalary(int salary)
+  public void receiveSalary(double salary)
   {
     salaryEarned += salary; 
     School.totalMoneySpent(salary);
+    School.totalMoneyLeft(0,salary);
   }
   /**
    * getter method for the number of years the teacher worked 

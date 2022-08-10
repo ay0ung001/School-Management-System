@@ -22,11 +22,11 @@ public class Student
     this.id = id;
     this.major = major;
     this.moreThanOneMajor = false;
-    this.tuition = 350000;
+    this.tuition = tuition;
     this.feesDue = 0;
     this.amtPaid = 0;
     this.gpa = gpa;
-    this.clubsJoined = 0;
+    this.clubsJoined = clubsJoined;
   }
 
   /**
@@ -67,6 +67,15 @@ public class Student
   }
 
   /**
+   * amt of tuition student owes
+   * @return - tuition that the student owes
+   */
+  public double getTuition()
+  {
+    return tuition;
+  }
+
+  /**
    * student pays fees, updates amtPaid and school's funds
    * @param fees - amt that the student pays
    */
@@ -74,6 +83,7 @@ public class Student
   {
     amtPaid += fees;
     School.totalMoneyEarned(fees);
+    School.totalMoneyLeft(fees,0);
   }
   
   /**
