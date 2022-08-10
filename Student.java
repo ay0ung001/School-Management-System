@@ -16,7 +16,7 @@ public class Student
   double gpa;
   int clubsJoined;
 
-  Student(String name, int id, List<String> major, boolean moreThanOneMajor, double tuition, double feesDue, double amtPaid, double gpa, int clubsJoined)
+  Student(String name, int id, List<String> major, double tuition, double gpa, int clubsJoined)
   {
     this.name = name;
     this.id = id;
