@@ -1,3 +1,7 @@
+/**
+ * Creates Student and Teacher Objects within a School and uses various methods as interaction
+ * Creation: 9 Aug. 2022
+ */
 import java.util.*;
 
 public class Main
